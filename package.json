@@ -1,0 +1,15 @@
+{
+  "name": "componentdemo",
+  "version": "1.0.0",
+  "description": "demo app for component libralies ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "demo",
+    "libralies"
+  ],
+  "author": "haoxin_qiu",
+  "license": "ISC"
+}
