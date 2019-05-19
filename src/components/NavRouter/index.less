@@ -1,0 +1,25 @@
+.demo-nrouter-wrapper{
+    width:100%;position:relative;
+	& .demo-nrouter-list{
+		width:100%;
+		display: inline-flex;
+		position: fixed;
+		left:0;
+		bottom: 0;
+		height: 48px;
+		align-items: center;
+		justify-content: center;
+        background-color: #fff;
+        z-index: 100;
+		& > li{
+			width:50%;text-align: center;
+			box-sizing: border-box;
+			&:first-child{
+				border-right: 1px solid #eee;
+			}
+			&.selected{
+				color:#4598f0;
+			}
+		}
+	}
+}

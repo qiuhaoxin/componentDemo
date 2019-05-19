@@ -4,7 +4,7 @@ import {Provider} from 'react-redux';
 import configStore from './createStore.js';
 import Router from './router';
 import rootSaga from './saga'
-
+import './index.less';
 const store=configStore();
 store.runSaga(rootSaga);
 

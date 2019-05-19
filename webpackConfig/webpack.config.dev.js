@@ -32,26 +32,40 @@ module.exports={
            	  test:/\.(js|jsx)$/,
            	  loader:require.resolve('babel-loader'),
            	  include:path.resolve(__dirname,'../src'),
-           },{
-              test:/\.(css)$/,
-              use: [
-                    require.resolve('style-loader'),
-                    {
-                      loader: require.resolve('css-loader'),
-                      options: {
-                        importLoaders: 1,
-                        sourceMap: false,
-                        modules: true,
-                        localIdentName: '[name]_[local]_[hash:base64:5]'
-                      },
-                    },
-                   {
-                       loader:require.resolve('postcss-loader'),
-                     },
-                  ],
-           },{
+           },
+           // {
+           //    test:/\.(css)$/,
+           //   // include:/node_modules|antd\.css/,
+           //    use: [
+           //          require.resolve('style-loader'),
+           //          {
+           //            loader: require.resolve('css-loader'),
+           //            options: {
+           //              importLoaders: 1,
+           //              sourceMap: false,
+           //              modules: true,
+           //              localIdentName: '[name]_[local]_[hash:base64:5]'
+           //            },
+           //          },
+           //         // {
+           //         //     loader:require.resolve('postcss-loader'),
+           //         //   },
+           //        ],
+           // },
+           {
+                test: /\.css$/,
+                loader: 'css?sourceMap&modules&localIdentName=[local]___[hash:base64:5]!!',
+                exclude: /node_modules/
+            },
+            {
+                test: /\.css$/, 
+                use:[
+                    'style-loader',
+                    'css-loader',
+                ]
+            },{
               test:/\.less$/,
-              include:path.resolve(__dirname,'../src'),
+              //include:path.resolve(__dirname,'../src'),
               use: [
                     require.resolve('style-loader'),
                     {

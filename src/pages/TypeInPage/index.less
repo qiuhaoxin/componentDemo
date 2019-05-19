@@ -1,0 +1,48 @@
+
+.ai-ti-demo{
+	margin-left:30px;margin-right:40px;margin-top:30px;
+}
+.dialogContent{
+	width:100%;display:inline-flex;
+
+	& > ul{
+	   list-style:none;width:100%;
+	   & > li{
+	      margin-top:8px;display:inline-flex;width:100%;font-family: PingFangSC-Regular;font-size: 15px;line-height: 23px;
+	      & .dialogContent-left{
+              width:45%;color: #999;
+	      }
+	      & .dialogContent-right{
+              flex-grow:1;color: #2A2A30;text-align: right;
+	      }
+	   }
+	}
+	&-left,&-right{
+       width:50%;display:flex;flex-direction:column;
+       &>ul{
+         margin-top:9px;
+         list-style:none;font-family: PingFangSC-Regular;font-size: 15px;color: #999;line-height: 23px;
+         &>li{
+            margin-top:8px;
+         }
+       }
+	}
+	&-right{
+	   justify-content:flex-end;align-items:flex-end;
+	   &>ul{
+	      font-family: PingFangSC-Regular;font-size: 15px;color: #2A2A30;text-align: right;line-height: 23px;
+	   }
+	}
+	& .loc{
+	   font-size:16px;color:#999;margin-top:12px;
+	}
+	& .loc_fill{
+	    color:#333;
+	}
+	& .time{
+	   font-size:13px;color:#999;margin-top:12px;
+	}
+	& .time_fill{
+	   color:#333;
+	}
+}

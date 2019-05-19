@@ -1,6 +1,6 @@
 
 const initialState={
-   test:'',
+   userName:'haoxin_qiu',
 }
 export const mainpage=(state=initialState,action)=>{
      const type=action.type;

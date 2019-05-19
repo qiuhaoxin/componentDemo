@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function asyncComponent(importComponent){
 
-	class AsyncComponent enxtends React.Component{
+	class AsyncComponent extends React.Component{
          constructor(props){
          	super(props);
          }
