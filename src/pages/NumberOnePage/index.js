@@ -10,7 +10,7 @@ class NumberOnePage extends Component{
 		super(props);
 		    this.cardData={
 		         title:'金蝶云2月份的续费率',
-		         cardType:'two',
+		         type:'two',
 		         bodyData:[
 		            [{key:'苍穹',value:'50%',id:0},{key:'星空',value:'70%',id:1}],
 		            [{key:'K/3WISE',value:'50%',id:0},{key:'EAS',value:'70%',id:1}],
@@ -19,7 +19,7 @@ class NumberOnePage extends Component{
 		    }
 		    this.cardDataOne={
 		         title:'金蝶中国业绩总览',
-		         cardType:'one',
+		         type:'COMBINED_CARD',
 		         bodyData:[
 		            {  
 		              id:0,
@@ -50,7 +50,7 @@ class NumberOnePage extends Component{
 		    }
 		    this.cardDataTwo={
 		         title:'苍穹客户数量',
-		         cardType:'three',
+		         type:'three',
 		         bodyData:[
 		                  [{key:'累计总数：',value:'1000家',id:0},{key:'本年新增：',value:'400家',id:1},{key:'同比增长：',value:'40%',id:2}],
 		            // [{key:'K/3WISE',value:'50%',id:0},{key:'EAS',value:'70%',id:1}],
