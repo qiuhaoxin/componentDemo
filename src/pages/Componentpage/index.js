@@ -10,17 +10,83 @@ import Styles from './index.less';
 // import 'antd-mobile/lib/button/style/css'; 
 import {connect} from 'react-redux';
 import {Link} from 'react-router-dom';
+import {nav} from '../../common/nav.js';
+
+let componentArr=nav.filter(item=>item.module=='Component');
+componentArr=componentArr[0].children;
+console.log("component arr",JSON.stringify(componentArr));
 class ComponentPage extends React.Component{
 	constructor(props){
 		super(props);
+	}
+	state={
+		componentArr:[],
 	}
 	handleListClick=()=>{
 		const {history,userName}=this.props;
 		history.push('/typein');
 	}
+	renderList=(listArr)=>{
+        
+        return <List>
+             {
+             	listArr.map(item=>{
+             		const link=item.path;
+             		const name=item.name;
+             		return <List.Item key={item.id}>
+                         <Link to={link}>{name}</Link>
+             		</List.Item>
+             	})
+             }
+        </List>
+	}
+	componentDidMount(){
+       this.setState({
+       	 componentArr,
+       })
+	}
+	componentWillReceiveProps(){
+		console.log("receiveProps");
+	}
+	renderAccordion=()=>{
+		const {componentArr}=this.state;
+        const accordionStr=componentArr.map(item=>{
+            const headerTitle=item.name;
+        	return <Accordion key={item.id} className={Styles['demo-accordion']}>
+                <Accordion.Panel header={headerTitle}>
+                    {
+                    	this.renderList(item.children)
+                    }
+                </Accordion.Panel>
+            </Accordion>
+        })
+	    return <div>
+            {accordionStr}
+	    </div>
+		
+	}
 	render(){
 		return <div className={Styles['wrapper']}>
-            <Accordion className={Styles['demo-accordion']} onChange={this.onChange}>
+             {this.renderAccordion()}
+		</div>
+	}
+}
+
+
+ComponentPage.defaultProps={
+
+}
+ComponentPage.propTypes={
+
+}
+
+export default connect(state=>({
+	userName:state.mainpage.userName,
+}))(ComponentPage)
+
+
+/**
+ *             <Accordion className={Styles['demo-accordion']} onChange={this.onChange}>
                 <Accordion.Panel header="流程卡片">
 			       <List className="my-list">
 			              <List.Item ><Link to={'/typein'}>填单类卡片</Link></List.Item>
@@ -59,18 +125,4 @@ class ComponentPage extends React.Component{
 			       </List>
                 </Accordion.Panel>
             </Accordion>
-		</div>
-	}
-}
-
-
-ComponentPage.defaultProps={
-
-}
-ComponentPage.propTypes={
-
-}
-
-export default connect(state=>({
-	userName:state.mainpage.userName,
-}))(ComponentPage)
+ */

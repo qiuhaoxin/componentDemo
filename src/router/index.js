@@ -2,7 +2,9 @@ import {HashRouter,Switch,Redirect,Route} from 'react-router-dom';
 import React from 'react';
 import {nav} from '../common/nav.js';
 
- import Mainpage from '../pages/Mainpage';
+import Mainpage from '../pages/Mainpage';
+import {getRouterArr} from '../utils';
+const navArr=getRouterArr(nav,[]);
 class Router extends React.Component{
     
     render(){
@@ -10,11 +12,10 @@ class Router extends React.Component{
              <Switch>
                  <Route path="/mainpage" component={Mainpage}/>
                  {
-                 	nav.map(item=><Route key={item.id} exact={item.exact} path={item.path} component={item.component} />)
+                 	navArr.map(item=><Route key={item.id} exact={item.exact} path={item.path} component={item.component} />)
                  }
              </Switch>
     	</HashRouter>
     }
 } 
-
 export default Router;
