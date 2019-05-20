@@ -5,7 +5,7 @@
 import React from 'react';
 import Styles from './index.less';
 
- import {Accordion, List} from 'antd-mobile';
+ import {Accordion, List,Icon} from 'antd-mobile';
 // import Button from 'antd-mobile/lib/button';  // 加载 JS
 // import 'antd-mobile/lib/button/style/css'; 
 import {connect} from 'react-redux';
@@ -33,8 +33,9 @@ class ComponentPage extends React.Component{
              	listArr.map(item=>{
              		const link=item.path;
              		const name=item.name;
-             		return <List.Item key={item.id}>
+             		return <List.Item key={item.id} className={Styles['list-item']}>
                          <Link to={link}>{name}</Link>
+                         <Icon type='right' color={`#e5e5e5`} size='md'/>
              		</List.Item>
              	})
              }

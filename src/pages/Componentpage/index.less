@@ -19,6 +19,28 @@
                	  content:'';background-color: #fff !important;
                }
            }
+           .am-accordion-content {
+              & .am-accordion-content-box{
+                &:after{
+                  content:'';background-color: #fff;
+                }
+              }
+           }
 		}
 	}
+  & .list-item{
+    :global{
+      .am-list-content{
+        width:100%;
+        display: inline-flex;
+        align-items: center;
+
+        & > a{
+          width:92%;color:#555;
+        }
+      }
+    }
+
+    
+  }
 }

@@ -7,7 +7,7 @@ import Styles from './index.less';
 import chailubiaozhun from '../../images/chailubiaozhun.png';
 import chuchashenqing from '../../images/chuchashenqing.png';
 import xiechengshanglu from '../../images/xiechengshanglu.png';
-
+import {RecommendCard} from 'aicomponents';
 class RecommendPage extends Component{
     constructor(props){
     	super(props);
@@ -20,7 +20,7 @@ class RecommendPage extends Component{
     }
 	render(){
 		return <div>
-           <RecommendCard data={this.data} className={'ai-rc-card'} desc={'Hi~我是小K,下面是我学会的技能,快让我表演给你看吧?'}></RecommendCard>
+           <RecommendCard data={this.data} className={Styles['ai-rc-card']} desc={'Hi~我是小K,下面是我学会的技能,快让我表演给你看吧?'}></RecommendCard>
 		</div>
 	}
 }
