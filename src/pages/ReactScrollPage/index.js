@@ -26,12 +26,21 @@ class ReactScrollPage extends React.Component{
           dialogList,
       })
    }
+   componentDidUpdate(){
+      const {scrollEl}=this.props;
+      console.log(`scrollEl did update`,scrollEl);
+      if(scrollEl){
+        this.scrollTo(scrollEl)
+      }
+
+   }
    handleClick=()=>{
        this.scrollTo();
    }
-   scrollTo() {
-      scroller.scrollTo('test2', {
-        duration: 800,
+   scrollTo(scrollEl) {
+      //console.log(scrollEl,scrollEl);
+      scroller.scrollTo(scrollEl, {
+        duration: 500,
         delay: 0,
         smooth: 'easeInOutQuart'
       })
@@ -56,7 +65,8 @@ class ReactScrollPage extends React.Component{
                 say:target.value,
               },
               callback:function(response){
-                 _this.handleResponse();
+                 target.value='';
+                 //_this.handleResponse();
               }
            })
        }
@@ -78,8 +88,7 @@ class ReactScrollPage extends React.Component{
       if(dialogList.length==0)return null;
       console.log(`dialogList `,JSON.stringify(dialogList));
       const str=dialogList.map(item=>{
-           console.log("item is "+JSON.stringify(item));
-           return <Element className={Styles['element']}>
+           return <Element key={item.id} name={item.name} className={Styles['element']}>
               <span>{item.text}</span>
            </Element>
       })
@@ -107,13 +116,8 @@ export default connect(state=>{
     dialogList:state.mainpage.dialogList,
     userName:state.mainpage.userName,
     say:state.mainpage.say,
+    scrollEl:state.mainpage.scrollEl,
   })
 })(ReactScrollPage);
 
-
-/**
- *         // <div className={Styles['header']} onClick={this.handleClick}>
-        //     滚动
-        // </div>
- */
 

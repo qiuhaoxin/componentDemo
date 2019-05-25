@@ -2,7 +2,6 @@ import {put,call,fork,takeEvery,takeLastest} from 'redux-saga/effects';
 import {delay} from 'redux-saga';
 
 function* tongyin(payload){
-	console.log("payload is "+JSON.stringify(payload));
 	try{
         yield put({
         	type:'say',
@@ -22,6 +21,9 @@ function* chat(payload){
        	  type:'dealChat',
        	  payload:'知道啦'+Math.random(),
        })
+       const callback=payload.callback;
+       const result={result:1,alerMes:'对话成功',text:'知道啦'+Math.random()}
+       callback && callback(result);
     }catch(e){
 
     }
