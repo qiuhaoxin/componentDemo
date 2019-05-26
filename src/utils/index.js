@@ -28,3 +28,15 @@ export const FilterMaxId=(list,columnName)=>{
       return parseInt(temp[columnName])+1;
     return 1;
 }
+
+
+export const isEmpty=function(str){
+    if (str === undefined){
+        return true
+    }
+    const emptyReg=/^\s*$/;
+    if(emptyReg.test(str)){
+        return true;
+    }
+    return false;
+}

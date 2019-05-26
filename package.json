@@ -4,7 +4,8 @@
   "description": "demo app for component libralies ",
   "main": "index.js",
   "scripts": {
-    "start": "node ./script/start.js"
+    "start": "node ./script/start.js",
+    "test": "mocha --require @babel/register"
   },
   "keywords": [
     "demo",
@@ -16,6 +17,7 @@
     "@babel/core": "^7.4.4",
     "@babel/preset-env": "^7.4.4",
     "@babel/preset-react": "^7.0.0",
+    "@babel/register": "^7.4.4",
     "babel-loader": "^8.0.6",
     "babel-plugin-import": "^1.11.2",
     "babel-plugin-transform-decorators-legacy": "^1.3.5",
@@ -29,6 +31,7 @@
     "html-webpack-plugin": "^3.2.0",
     "less": "^3.9.0",
     "less-loader": "^5.0.0",
+    "mocha": "^6.1.4",
     "open-browser-webpack-plugin": "0.0.5",
     "postcss-loader": "^3.0.0",
     "style-loader": "^0.23.1",
