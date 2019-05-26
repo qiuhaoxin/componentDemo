@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node ./script/start.js",
-    "test": "mocha --require @babel/register"
+    "test": "export NODE_ENV=development && mocha --require @babel/register"
   },
   "keywords": [
     "demo",
