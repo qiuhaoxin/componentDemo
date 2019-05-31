@@ -1,4 +1,5 @@
 import asyncComponent from '../utils/asyncComponent.js';
+import asyncComponentWithBack from '../utils/asyncComponentWithBack.js';
 // export const nav=[
 
 //     {id:1,name:'填单类卡片',exact:true,path:'/typein',component:asyncComponent(()=>import('../pages/TypeInPage'))},
@@ -49,9 +50,9 @@ export const nav = [
                 children: [
                     // {id: 9, name: '饼状图卡片', exact: true, path: '/feekback1', component: asyncComponent(() => import('../pages/Feekback'))},
                     // {id: 9, name: '', exact: true, path: '/feekback1', component: asyncComponent(() => import('../pages/Feekback'))},
-                    {id: 10, name: '柱状图卡片', exact: true, path: '/histogram', component: asyncComponent(() => import('../pages/Histogram'))},
-                    {id: 11, name: '折线图卡片', exact: true, path: '/lineCard', component: asyncComponent(() => import('../pages/LineCardPage'))},
-                    {id: 12, name: '分组柱状图卡片', exact: true, path: '/slidelist1', component: asyncComponent(() => import('../pages/GroupHistogramCardPage'))},
+                    {id: 10, name: '柱状图卡片', exact: true, path: '/histogram', component: asyncComponentWithBack(() => import('../pages/Histogram'))},
+                    {id: 11, name: '折线图卡片', exact: true, path: '/lineCard', component: asyncComponentWithBack(() => import('../pages/LineCardPage'))},
+                    {id: 12, name: '分组柱状图卡片', exact: true, path: '/slidelist1', component: asyncComponentWithBack(() => import('../pages/GroupHistogramCardPage'))},
                 ]
             },
             {
