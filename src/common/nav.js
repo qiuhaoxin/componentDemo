@@ -24,10 +24,11 @@ export const nav=[
            	  id:0,
            	  name:'流程卡片',
               children:[
-				    {id:0,name:'填单类卡片',exact:true,path:'/typein',component:asyncComponent(()=>import('../pages/TypeInPage'))},
-				    {id:1,name:'财务指标卡片',exact:true,path:'/numbercardconfig',component:asyncComponent(()=>import('../pages/NumberCardConfig'))},
-				    {id:2,name:'1号报表卡片',exact:true,path:'/numberone',component:asyncComponent(()=>import('../pages/NumberOnePage'))},
-				    {id:3,name:'滑动列表卡片',exact:true,path:'/slidelist',component:asyncComponent(()=>import('../pages/SlideListPage'))},
+    				    {id:0,name:'填单类卡片',exact:true,path:'/typein',component:asyncComponent(()=>import('../pages/TypeInPage'))},
+    				    {id:1,name:'财务指标卡片',exact:true,path:'/numbercardconfig',component:asyncComponent(()=>import('../pages/NumberCardConfig'))},
+    				    {id:2,name:'1号报表卡片',exact:true,path:'/numberone',component:asyncComponent(()=>import('../pages/NumberOnePage'))},
+    				    {id:3,name:'滑动列表卡片',exact:true,path:'/slidelist',component:asyncComponent(()=>import('../pages/SlideListPage'))},
+                {id:4,name:'adaptiveCards',exact:true,path:'/adaptivecards',component:asyncComponent(()=>import('../pages/AdaptiveCards'))},
               ]
            },{
              id:1,
