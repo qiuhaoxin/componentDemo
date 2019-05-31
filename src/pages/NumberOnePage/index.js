@@ -35,13 +35,13 @@ class NumberOnePage extends Component{
 		            {  
 		              id:0,
 		              numberDetail:[
-		              {key:'本年收款',value:'¥123,4万'},
+		              {key:'本年收款',value:'¥1234万'},
 		              {key:'缺口',value:'¥-34万'},
 		               ],
 		               radioDetail:[
-		                {key:'完成率：',value:'60%'},
-		              {key:'同比增长：',value:'60%'},   
-		              {key:'云占比：',value:'34%'}
+		                {key:'完成率',value:'60%'},
+		                {key:'云占比',value:'34%'},
+		                {key:'同比增长',value:'60%'},   
 		               ]
 		            },
 		            {  
@@ -51,9 +51,9 @@ class NumberOnePage extends Component{
 		                {key:'缺口',value:'¥34万'},
 		               ],
 		               radioDetail:[
-		                {key:'完成率：',value:'50%'},
-		                {key:'同比增长：',value:'50%'},   
-		                {key:'云占比：',value:'64%'}
+		                {key:'完成率',value:'50%'},
+		                {key:'同比增长',value:'50%'},   
+		                {key:'云占比',value:'64%'}
 		               ]
 		            }
 		         ],

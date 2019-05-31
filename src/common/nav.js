@@ -12,9 +12,7 @@ import asyncComponent from '../utils/asyncComponent.js';
 //     {id:8,name:'滑动列表卡片',exact:true,path:'/slidelist',component:asyncComponent(()=>import('../pages/SlideListPage'))},
 // ]
 
-function nextKey() {
 
-}
 
 export const nav = [
     {

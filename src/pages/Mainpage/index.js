@@ -4,6 +4,7 @@ import NavRouter from '../../components/NavRouter';
 
 import {connect} from 'react-redux';
 import asyncComponent from '../../utils/asyncComponent.js';
+import {splitNum} from '../../utils';
 class Mainpage extends Component{
     constructor(props){
     	super(props);
@@ -12,10 +13,12 @@ class Mainpage extends Component{
 	    	{id:1,name:'API',link:'api',component:asyncComponent(()=>import('../APIpage'))},//,component:asyncComponent(()=>import('../APIpage'))
     	];
     }
+    componentDidMount(){
+        splitNum('-44.23千元',3,',');
+    }
     render(){
     	return <div>
-           
-           <NavRouter navArr={this.navData} {...this.props}/>
+           <NavRouter navArr={this.navData} {...this.props}/> 
     	</div>
     }
 }
@@ -23,3 +26,8 @@ class Mainpage extends Component{
 export default connect(state=>({
 	userName:state.mainpage.userName,
 }))(Mainpage);
+
+
+/*
+                 
+ */

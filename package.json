@@ -5,7 +5,10 @@
   "main": "index.js",
   "scripts": {
     "start": "node ./script/start.js",
-    "test": "cross-env NODE_ENV=development mocha --require @babel/register"
+    "test": "cross-env NODE_ENV=development mocha --require @babel/register",
+    "clean": "rimraf ./dist && mkdir dist",
+    "prebuild": "npm run clean",
+    "build": "node ./script/build.js"
   },
   "keywords": [
     "demo",
@@ -36,6 +39,7 @@
     "open-browser-webpack-plugin": "0.0.5",
     "postcss-loader": "^3.0.0",
     "style-loader": "^0.23.1",
+    "uglifyjs-webpack-plugin": "^2.1.3",
     "url-loader": "^1.1.2",
     "webpack": "^4.31.0",
     "webpack-dev-server": "^3.3.1"
